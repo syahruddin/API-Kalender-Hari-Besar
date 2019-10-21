@@ -3,10 +3,10 @@
 class Day(Base):
     __tablename__ = 'kalender'
 
-    date = Column(String(8), primary_key=True)
-    hari = Column(String(10), nullable=False)
-    isHaribesar = Column(Boolean, nullable=False)
-    haribesar = Column(String(100))
+    date = Column(String(8), primary_key=True)  """format: ddmmyyyy"""
+    hari = Column(String(10), nullable=False)   """nama hari(ex: Senin)"""
+    isHaribesar = Column(Boolean, nullable=False)   """apakah ada hari besar pada hari itu"""
+    haribesar = Column(String(100))                 """deskripsi hari besar(jika ada)"""
     
     @property
     def serialize(self):

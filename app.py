@@ -1,4 +1,3 @@
-from Flask import jsonify
 
 @app.route('/')
 @app.route('/API-Kalender-Hari-Besar', method = ['GET', 'POST'])
@@ -15,6 +14,13 @@ def fungsikalender():
 
 @app.route('/API-Kalender-Hari-Besar', method = ['GET'])
 
+
+"""fungsi"""
+
+from flask import jsonify
+
+
+
 def fungsihari(date):
     if request.method == 'GET':
         return get_hari(date)
@@ -28,10 +34,10 @@ def get_hari(date_dicari):
     hari = session.query(Day).filter_by(date = date_dicari).one()
     return jsonify(hari= hari.serialize)
     
-def newday(date,hari,haribesar)
+def newday(date,hari,haribesar):
     if haribesar == "":
         isHaribesar = False
-    else
+    else:
         isHaribesar = True
         
     haribaru = Day(date=date, hari=hari, haribesar=haribesar, isHaribesar=isHaribesar)
